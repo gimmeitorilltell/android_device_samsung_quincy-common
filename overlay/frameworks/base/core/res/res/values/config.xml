@@ -106,10 +106,4 @@
     <!-- Our amoled doesn't animate well. -->
     <bool name="config_animateScreenLights">false</bool>
 
-    <!-- Enable stylus gestures -->
-    <bool name="config_stylusGestures">true</bool>
-
-    <!-- Device supports LED flashlight -->
-    <bool name="config_enableTorch">true</bool>
-    
 </resources>
