@@ -104,6 +104,6 @@
     <bool name="skip_restoring_network_selection">true</bool>
 
     <!-- Our amoled doesn't animate well. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <!-- <bool name="config_animateScreenLights">false</bool> -->
 
 </resources>
