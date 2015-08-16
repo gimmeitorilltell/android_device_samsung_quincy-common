@@ -37,6 +37,9 @@ on fs
     # Enable zRAM
     swapon_all /fstab.qcom
 
+    # Symlink hack to fix RIL crashes
+    symlink /data/data/com.android.providers.telephony/shared_prefs/preferred-apn1.xml /data/data/com.android.providers.telephony/shared_prefs/preferred-apn.xml
+
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
