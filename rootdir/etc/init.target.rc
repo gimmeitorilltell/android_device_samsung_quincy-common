@@ -352,11 +352,6 @@ service ril-daemon /system/bin/rild
     user root
     group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log
 
-service secril-daemon /system/bin/sec-ril
-    class main
-    user root
-    group radio cache inet misc audio sdcard_rw qcom_diag log
-
 service kickstart /system/bin/qcks l
     oneshot
     disabled
