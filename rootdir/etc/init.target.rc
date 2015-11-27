@@ -398,12 +398,6 @@ service thermald /system/bin/thermald
     group root
     disabled
 
-# qrngd will drop permissions after startup
-service qrngd /system/bin/qrngd -f
-    class main
-    user root
-    group root
-
 on property:ro.baseband=svlte2a
    setprop ro.config.ehrpd true
    setprop ro.ril.svlte1x true
