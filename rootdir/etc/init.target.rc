@@ -95,8 +95,6 @@ on boot
 # on emmc mount the partition containing firmware
 on post-fs-data 
     mount ext3 /dev/block/mmcblk0p24 /system remount rw
-    mkdir /system/etc/firmware/misc 0771 system system
-    mkdir /system/etc/firmware/misc_mdm 0771 system system
     exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
     mount ext4 /dev/block/mmcblk0p24 /system remount ro barrier=0
 
@@ -124,10 +122,7 @@ on post-fs-data
     mkdir /data/misc/sensors 0775 root root
     write /data/system/sensors/settings 0
     chmod 0664 /data/system/sensors/settings
-    
-    # for parameter
-    chown system radio /dev/block/mmcblk0p12
-    chmod 0660 /dev/block/mmcblk0p12
+
     # DLEVEL
     chown system radio /sys/devices/platform/sec_debug_level
     chmod 0664 /sys/devices/platform/sec_debug_level
@@ -138,14 +133,14 @@ on post-fs-data
     chown radio system /sys/module/subsystem_restart/parameters/restart_level
 
     # permission for fast dormacy for RIL
-    chown system radio /sys/devices/platform/mdm_hsic_pm0/waketime
-    chmod 660 /sys/devices/platform/mdm_hsic_pm0/waketime
     chown radio system /sys/devices/virtual/sec/sdio_al/waketime
-    chmod 660 /sys/devices/virtual/sec/sdio_al/waketime
 
     # Vibetonz
     chmod 0660 /dev/tspdrv
     chown root shell /dev/tspdrv
+
+    # Keydisabler
+    chown system system /sys/class/sec/sec_touchkey/keypad_enable
 
     chown system system /sys/power/cpufreq_max_limit
     chown system system /sys/power/cpufreq_min_limit
