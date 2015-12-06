@@ -139,7 +139,10 @@ on post-fs-data
     chown radio system /sys/module/subsystem_restart/parameters/restart_level
 
     # permission for fast dormacy for RIL
+    chown system radio /sys/devices/platform/mdm_hsic_pm0/waketime
+    chmod 660 /sys/devices/platform/mdm_hsic_pm0/waketime
     chown radio system /sys/devices/virtual/sec/sdio_al/waketime
+    chmod 660 /sys/devices/virtual/sec/sdio_al/waketime
 
     # Vibetonz
     chmod 0660 /dev/tspdrv
